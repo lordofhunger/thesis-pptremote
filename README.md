@@ -1,11 +1,21 @@
 # Powerpoint Remote: Set-up and installation
+
+## IMPORTANT! Downloading the files:
+1) Download the files from this Github Repo as a ZIP folder.
+2) Right-click the ZIP folder **before extracting** and check the 'Unblock' checkbox, and then click 'Apply'.
+<img width="412" height="520" alt="image" src="https://github.com/user-attachments/assets/f249c72a-fa41-4527-b285-d1b656632453" />
+<img width="414" height="523" alt="image" src="https://github.com/user-attachments/assets/a25baa12-0613-4ee3-98fd-ddb0c53b2dc7" />
+4) Extract the files as you would any ZIP folder.
+
+
 ## Installing the add-in (one-time only)
 To install the PowerPoint Add-in, follow these steps:
-1) Go into the 'addin-publish' folder
-2) Double-click the 'setup.exe' file
-3) In case Windows shows the following image, click on 'more info'
+1) Go into the 'addin-publish' folder.
+2) Double-click the 'setup.exe' file.
+3) In case Windows shows the following image, click on 'more info'.
 <img width="534" height="500" alt="image" src="https://github.com/user-attachments/assets/5569d3b1-b212-4813-86a2-7e7c28ad8a5b" />
-4) Click on 'Run Anyway' (note that this means that you trust me)
+4) Click on 'Run Anyway' (Windows flags this because of me not having a developer signature, which costs 200 dollars yearly and requires ID verification on my part).
+
 
 ## Using the application
 1) Click on the 'RemotePPT' application
@@ -15,15 +25,16 @@ To install the PowerPoint Add-in, follow these steps:
 <img width="432" height="641" alt="image" src="https://github.com/user-attachments/assets/a10f230f-03d3-4db1-8e9e-6c96e672449e" />
 <img width="434" height="644" alt="image" src="https://github.com/user-attachments/assets/3f8575e7-1f20-44a7-83e6-01db510c7adc" />
 
+
 ## Using the video cutter
 Due to some issues with getting video breakpoints implemented we have opted to give our users a simple GUI to cut videos into smaller segments, to use this cutter follow these steps:
 1) Click the 'video cutter' button after having opened the application.
-2) You are now greeted with this screen, where you may select a video from your files using the 'select video' button and provide a set of breakpoints where you would like to cut the video into different pieces.
+2) You are now greeted with this screen, where you may select a video from your files using the 'select video' button and provide a set of breakpoints where you would like to cut the video into different pieces. You can give any of the following formats: a number, this will be treated as an amount of seconds; mm:ss, with m as minutes and s as seconds; hh:mm:ss, with h as hours, m as minutes and s as seconds.
 <img width="397" height="328" alt="image" src="https://github.com/user-attachments/assets/1c989dd2-e756-4351-8af3-fa959fd2e8ce" />
 Example usage:
 <img width="393" height="320" alt="image" src="https://github.com/user-attachments/assets/87b12aa0-81e7-44ca-8436-b3b60eba77e6" />
 3) Press the button 'cut video' at the bottom of the window, you will then be taken to a folder with your video cut into pieces.
 Example:
 <img width="821" height="286" alt="image" src="https://github.com/user-attachments/assets/577e6143-bd01-431c-b1f2-dd498d08e47d" />
-For our example these videos will be from 0-14 seconds, from 14-25 seconds, from 25 seconds to 2 minutes and 6 seconds, from 2 minutes and 6 seconds to 7 hours, 44 minutes, and 13 seconds, and then whatever remains of the video.
-Note that if you give timestamps that are larger than the duration of the video that the application will attempt to create these and will give you blank videos.
+For our example these videos will be 00:00:00-00:00:14, 00:00:14-00:00:25, 00:00:25-00:02:06, 00:02:06-07:44:13, and then whatever remains of the video.
+**Note** that if you give timestamps that are larger than the duration of the video that the application will attempt to create these and will give you blank videos.

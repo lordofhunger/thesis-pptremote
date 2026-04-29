@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap');
+
+:root {
+  --cols: 12;
+  --rows: 8;
+  --gap:  8px;
+  --pad:  12px;
+
+  --bg:           #faf8f4; 
+  --surface:      #ffffff;
+  --border:       #ddd9d0;
+  --border-strong:#b8b0a0;
+  --accent:       #1b75e0;
+  --accent-light: #87ace0;
+
+  --text:         #1a1814;
+  --text-dim:     #8a8278;
+  --text-inv:     #ffffff;
+  --radius:       10px;
+  --radius-lg:    14px;
+  --radius-sm:    6px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background:  var(--bg);
+  color:       var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  height:      100vh;
+  overflow:    hidden;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.dark {
+  --bg:           #121212;
+  --surface:      #1e1e1e;
+  --border:       #2a2a2a;
+  --border-strong:#3a3a3a;
+  --accent:       #d96b3b;
+  --accent-light: #2a1f1a;
+
+  --text:         #f5f5f5;
+  --text-dim:     #a0a0a0;
+  --text-inv:     #121212;
+}
+
+#canvas {
+  padding-top: 40px;
+  position: absolute;
+  inset:    var(--pad);
+  display:  grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows:    repeat(var(--rows), 1fr);
+  gap: var(--gap);
+}
+
+img, #preview-img {
+  touch-action: none;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+}

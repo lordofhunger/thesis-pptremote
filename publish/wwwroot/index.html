@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentation Remote</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/widgets.css">
+  <link rel="stylesheet" href="/css/buttons.css">
+  <link rel="stylesheet" href="/css/settings.css">
+</head>
+<body>
+
+  <button id="gear-btn" title="Layout settings">⚙</button>
+  <button id="theme-btn" title="Toggle theme">☀︎</button>
+
+  <div id="canvas"></div>
+
+  <div id="settings">
+    <div id="settings-header">
+      <h2>Layout Editor</h2>
+      <button id="close-btn">✕</button>
+    </div>
+    <div id="settings-body">
+
+      <div>
+          <div class="section-label">Presets</div>
+          <div class="preset-row" id="preset-row"></div>
+      </div>
+
+      <div>
+        <div class="section-label">Grid preview: click a cell to place a widget</div>
+        <div id="editor-grid"></div>
+      </div>
+
+      <div id="size-picker">
+        <p>Placing: <strong id="placing-name"></strong>choose size then click Place</p>
+        <div class="size-row">
+          <label for="span-w">Cols</label>
+          <input type="range" id="span-w" min="1" max="12" value="6">
+          <span class="size-val" id="span-w-val">6</span>
+        </div>
+        <div class="size-row">
+          <label for="span-h">Rows</label>
+          <input type="range" id="span-h" min="1" max="8" value="4">
+          <span class="size-val" id="span-h-val">4</span>
+        </div>
+        <button id="place-btn">Place widget</button>
+      </div>
+
+      <div>
+        <div class="section-label">Widgets: click to select for placement</div>
+        <div class="palette" id="palette"></div>
+        <div class="section">
+          <div class="section-label">Thumbnail Settings</div>
+          <div class="size-row">
+              <label>Size</label>
+              <input type="range" id="global-thumb-slider" min="40" max="500" value="80">
+              <span id="global-thumb-val" class="size-val">80</span>
+          </div>
+          <button id="delete-preset-btn" class="preset-btn" style="margin-top:8px;">Remove a preset</button>
+      </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="overlay" onclick="closeSettings()"></div>
+    <!--
+        The load order matters here! Each file can depend on those above it:
+        --------------------------------------------------------------------------------------
+        presets     ->   defines WIDGET_DEFS and PRESETS   (no dependencies)
+        state       ->   defines shared variables          (no dependencies)
+        w-builders  ->   defines WIDGET_BUILDERS,          (depends on state for slideCount)
+        w-render    ->   defines renderCanvas etc,         (depends on builders and state)
+        layout      ->   applyPreset and boot,             (depends on all of the above)
+        settings    ->   editor panel logic,               (depends on layout and render)
+        poll        ->   live updates,                     (depends on state and render)
+        --------------------------------------------------------------------------------------
+    -->
+  <script src="/js/presets.js"></script>
+  <script src="/js/state.js"></script>
+  <script src="/js/video.js"></script>
+  <script src="/js/draw.js"></script>
+  <script src="/js/widget-builders.js"></script>
+  <script src="/js/widget-render.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/settings.js"></script>
+  <script src="/js/poll.js"></script>
+</body>
+</html>
